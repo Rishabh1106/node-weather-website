@@ -21,6 +21,10 @@ hbs.registerPartials(partialsPath)
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
 
+app.get('/v1', (req, res) => {
+    res.status(200).send("Healthy")
+})
+
 app.get('/test', (req, res) => {
     res.send("Hello world!")
 })
